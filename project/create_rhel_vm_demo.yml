@@ -20,10 +20,10 @@
     rhel_admin_password: "RedHatAnsible123!"
     survey_public_ip: "True"
   tasks:
-    - name: Create resource group
-      azure.azcollection.azure_rm_resourcegroup:
-        name: "{{ resource_group_name }}"
-        location: "{{ region }}"
+  #  - name: Create resource group
+  #    azure.azcollection.azure_rm_resourcegroup:
+  #      name: "{{ resource_group_name }}"
+  #      location: "{{ region }}"
 
     - name: Create virtual network
       azure.azcollection.azure_rm_virtualnetwork:
