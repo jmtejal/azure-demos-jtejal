@@ -1,0 +1,10 @@
+---
+- name: Install Cockpit on RHEL 8
+  hosts: RHEL8-ansible
+  become: yes
+
+  tasks:
+    - name: Install Cockpit package
+      yum:
+        name: cockpit
+        state: present
