@@ -1,1 +1,18 @@
+---
+- name: Change MOTD in RHEL
+  hosts: RHEL8-ansible
+  become: yes
+
+  tasks:
+    - name: Copy MOTD file
+      copy:
+        src: /path/to/your/motd/file
+        dest: /etc/motd
+      notify: restart sshd
+
+  handlers:
+    - name: restart sshd
+      service:
+        name: sshd
+        state: restarted
 
