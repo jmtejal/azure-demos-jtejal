@@ -1,1 +1,10 @@
+---
+- name: Gather Facts in RHEL
+  hosts: RHEL8-ansible
+  gather_facts: yes
+
+  tasks:
+    - name: Display gathered facts
+      debug:
+        var: ansible_facts
 
