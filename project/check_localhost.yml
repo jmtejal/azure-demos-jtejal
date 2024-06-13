@@ -1,9 +1,15 @@
 ---
-- name: Gather Facts in RHEL
+- name: List files in a directory
   hosts: localhost
-  gather_facts: yes
+  gather_facts: no
 
   tasks:
-    - name: Display gathered facts
+    - name: List files
+      find:
+        paths: "/var/backup"
+        file_type: file
+      register: files_list
+
+    - name: Display files
       debug:
-        var: ansible_facts
+        var: files_list.files
