@@ -4,6 +4,12 @@
   gather_facts: no
 
   tasks:
+    - name: Create directory
+      file:
+        path: "/var/backup/config"
+        state: directory
+        mode: "0777"
+
     - name: List files
       find:
         paths: "/var/backup"
