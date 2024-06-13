@@ -12,7 +12,7 @@
 
     - name: List files
       find:
-        paths: "/var/backup"
+        paths: "/var/backup/config"
         file_type: file
       register: files_list
 
